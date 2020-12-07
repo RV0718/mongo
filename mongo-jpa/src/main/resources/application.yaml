@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: momgo-jpa
+#      username: root
+#      password: root
+#      authentication-database: admin
+  application:
+    name: mongo-jpa
+
+server:
+  port: 8083
+
+
+

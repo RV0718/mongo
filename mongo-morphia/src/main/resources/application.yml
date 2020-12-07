@@ -1,0 +1,15 @@
+morphia:
+  connection:
+    port: 27017
+    host: localhost
+  db-name: sample-database
+  package-name: com.mongo.morphia.domain
+
+spring:
+  application:
+    name: mongo-morphia
+
+server:
+  port: 8083
+
+
