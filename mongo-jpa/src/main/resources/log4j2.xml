@@ -3,8 +3,9 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <JsonLayout complete="false" compact="true" eventEol="true"/>
+            <!--                    pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>-->
             <PatternLayout
-                    pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
+                    pattern="%style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
         </Console>
     </Appenders>
     <Loggers>

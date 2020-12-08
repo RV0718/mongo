@@ -1,5 +1,8 @@
 package com.mongo.jpa.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.mongo.jpa.domain.PhoneNumber;
 import com.mongo.jpa.domain.User;
 import com.mongo.jpa.repository.PhoneNumberDaoRepository;
@@ -14,12 +17,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     @Autowired
     private SequenceGeneratorService sequenceGeneratorService;
@@ -32,8 +39,13 @@ public class UserController {
 
 
     @GetMapping("/")
-    public List<User> userDetails() {
-        LOG.info("Inside UserDetails {}");
+    public List<User> userDetails() throws Exception{
+        Map<String,String> m = new HashMap<>();
+        m.put("a","b");
+        m.put("c","d");
+        m.put("e","f");
+        gson.toJson(m);
+        LOG.info(gson.toJson(m));
         List<User> allUsers = userDaoRepository.findAll();
         System.out.println(allUsers);
         return allUsers;
