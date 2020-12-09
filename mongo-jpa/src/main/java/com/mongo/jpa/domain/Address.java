@@ -60,4 +60,16 @@ public class Address{
     public void setPostCode(String postCode) {
         this.postCode = postCode;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", address3='" + address3 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postCode='" + postCode + '\'' +
+                '}';
+    }
 }

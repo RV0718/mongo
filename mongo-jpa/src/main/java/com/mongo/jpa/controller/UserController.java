@@ -23,7 +23,9 @@ public class UserController {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
 
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+
+   private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     @Autowired
     private SequenceGeneratorService sequenceGeneratorService;
@@ -39,6 +41,7 @@ public class UserController {
     public List<User> userDetails(){
         List<User> allUsers = userDaoRepository.findAll();
         LOG.info("Received users : {}",gson.toJson(allUsers));
+        LOG.info("Received users : {}",allUsers);
         return allUsers;
     }
 
